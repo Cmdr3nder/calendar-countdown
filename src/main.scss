@@ -1,0 +1,51 @@
+// Solarized Colors
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+html, body {
+	color: $base03;
+	background-color: $base2;
+}
+
+h1 {
+	color: $violet;
+}
+
+body {
+	display: flex;
+	justify-content: space-around;
+}
+
+#root {
+	background-color: $base3;
+	max-width: 800px;
+	height: 100%;
+	padding: 1rem;
+}
+
+// The rest of the styles are implied @media (prefers-color-scheme: light)
+@media (prefers-color-scheme: dark) {
+	html, body {
+		color: $base3;
+		background-color: $base02;
+	}
+
+	#root {
+		background-color: $base03;
+	}
+}
+
