@@ -39,3 +39,11 @@ watch-build: clean-build
 		sleep 0.5 ; \
 	done; \
 	true
+
+PHONY: test
+test:
+	npx jest
+
+PHONY: lint
+lint:
+	npx eslint src/**/*.js src/**/*.jsx
