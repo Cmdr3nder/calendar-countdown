@@ -1,6 +1,6 @@
 # Calendar Countdown
 
-A simple React based SPA that counts down to Haloween
+A simple React based SPA that counts down to Halloween
 
 ## Prerequisites
 * node ^16.9.1
