@@ -99,7 +99,7 @@ module.exports = {
                 'before': true
             }
         ],
-        'line-comment-position': 'error',
+        'line-comment-position': 'off',
         'linebreak-style': [
             'error',
             'unix'
@@ -146,7 +146,12 @@ module.exports = {
         'no-implicit-coercion': 'error',
         'no-implicit-globals': 'error',
         'no-implied-eval': 'error',
-        'no-inline-comments': 'error',
+        'no-inline-comments': [
+	        'error',
+	        {
+		        ignorePattern: 'type:\\s.+'
+	        }
+        ],
         'no-invalid-this': 'error',
         'no-iterator': 'error',
         'no-label-var': 'error',
@@ -191,7 +196,7 @@ module.exports = {
             }
         ],
         'no-template-curly-in-string': 'error',
-        'no-ternary': 'error',
+        'no-ternary': 'off',
         'no-throw-literal': 'error',
         'no-trailing-spaces': 'error',
         'no-undef-init': 'error',
@@ -237,7 +242,10 @@ module.exports = {
         'prefer-rest-params': 'error',
         'prefer-spread': 'error',
         'prefer-template': 'error',
-        'quote-props': 'error',
+        'quote-props': [
+	        'error',
+	        'as-needed',
+        ],
         'quotes': [
             'error',
             'single'
