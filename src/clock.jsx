@@ -5,6 +5,7 @@ import {zeroPadNum} from './helpers';
 
 function ClockSegment(props) {
 	const {
+		highlightValue,
 		label,
 		optional,
 		pad,
@@ -22,9 +23,15 @@ function ClockSegment(props) {
 		: `${label}s`;
 	const paddedValue = zeroPadNum(flooredValue, pad || 1);
 
+	const valueClasses = ['value'];
+
+	if (highlightValue) {
+		valueClasses.push('highlighted');
+	}
+
 	return (
 		<div className="clock-segment">
-			<div className="value">
+			<div className={valueClasses.join(' ')}>
 				{paddedValue}
 			</div>
 			<div className="label">
@@ -35,6 +42,7 @@ function ClockSegment(props) {
 }
 
 ClockSegment.propTypes = {
+	highlightValue: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	optional: PropTypes.bool,
 	pad: PropTypes.number,
@@ -74,6 +82,7 @@ export default function Clock(props) {
 				value={duration.minutes}
 				/>
 			<ClockSegment
+				highlightValue={true}
 				label="second"
 				pad={2}
 				value={duration.seconds}

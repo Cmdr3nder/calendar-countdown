@@ -18,7 +18,9 @@ function App() {
 				now={now}
 				title="Halloween"
 				/>
-			<a href="https://www.peppercarrot.com/" className="bg-source-link">Pepper & Carrot Episode-1 by David Revoy (CC BY 4.0)</a>
+			<a href="https://www.peppercarrot.com/" className="bg-source-link">
+				Pepper & Carrot Episode-1 by David Revoy (CC BY 4.0)
+			</a>
 		</>
 	);
 }

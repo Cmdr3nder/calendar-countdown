@@ -16,4 +16,3 @@ export function loggy(msg, stmt) {
 }
 
 export const zeroPadNum = (num, length) => _padStart(num.toString(), length, '0');
-

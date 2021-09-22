@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CountdownClock from './countdown-clock';
+import Clock from './clock';
 
 export default function Countdown(props) {
 	const {
@@ -28,17 +28,13 @@ export default function Countdown(props) {
 	let timeToHoliday = nowToHoliday.toDuration(['days', 'hours', 'minutes', 'seconds']);
 
 	if (timeToHoliday.days > 99) {
-		timeToHoliday = nowToHoliday.toDuration(['weeks', 'days', 'hours', 'minutes', 'seconds']);
-
-		if (timeToHoliday.weeks > 6) {
-			timeToHoliday = nowToHoliday.toDuration(['months', 'days', 'hours', 'minutes', 'seconds']);
-		}
+		timeToHoliday = nowToHoliday.toDuration(['months', 'days', 'hours', 'minutes', 'seconds']);
 	}
 
 	return (
 		<div className="countdown">
 			<h1>{title} Countdown</h1>
-			<CountdownClock
+			<Clock
 				duration={timeToHoliday}
 				/>
 		</div>

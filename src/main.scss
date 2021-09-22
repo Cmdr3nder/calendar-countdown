@@ -16,6 +16,8 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+$overlay-opacity: 85%;
+
 @import url('https://fonts.googleapis.com/css2?family=Are+You+Serious&family=Walter+Turncoat&display=swap');
 
 @mixin font-plain {
@@ -31,14 +33,14 @@ $green:     #859900;
 }
 
 html, body {
-	color: $base3;
-	background-color: $base03;
 	@include font-plain;
+	background-color: $base03;
+	color: $base3;
 	font-size: 5vw;
-	padding: 0;
-	margin: 0;
-	width: 100%;
 	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 }
 
 body {
@@ -47,8 +49,8 @@ body {
 }
 
 h1 {
-	color: $violet;
 	@include font-pumpkin;
+	color: $violet;
 	text-align: center;
 }
 
@@ -59,8 +61,8 @@ h1 {
 
 .countdown {
 	background-color: $base02;
+	opacity: $overlay-opacity;
 	padding: 1rem;
-	opacity: 85%;
 }
 
 .clock {
@@ -68,37 +70,41 @@ h1 {
 	justify-content: space-around;
 
 	.clock-segment {
-		flex: 1 1 0px;
-		display: flex;
-		flex-direction: column;
 		align-items: center;
+		display: flex;
+		flex: 1 1 0px;
+		flex-direction: column;
 
 		.value {
 			@include font-blocky;
 			font-size: 1.5em;
+			min-width: 2em;
 			padding: 0 0.1em;
 			text-align: center;
-			min-width: 2em;
+
+			&.highlighted {
+				color: $orange;
+			}
 		}
 
 		.label {
 			@include font-blocky;
-			text-transform: uppercase;
 			font-size: 0.5em;
 			text-align: center;
+			text-transform: uppercase;
 		}
 	}
 }
 
 .bg-source-link {
-	position: fixed;
+	background-color: $base03;
 	bottom: 0;
+	color: $blue;
+	font-size: 0.5em;
+	opacity: $overlay-opacity;
+	position: fixed;
 	right: 0;
 	text-align: right;
-	background-color: $base03;
-	font-size: 0.5em;
-	opacity: 85%;
-	color: $blue;
 
 	&:visited {
 		color: $magenta;
