@@ -18,3 +18,5 @@ With `make` (preferred):
 	* In order to stop `make watch-build` you will need to double-tap CTRL-C twice in relatively rapid succession.
 1. Suggestion: Run `make serve` and `make watch-build` simultaneously to achieve a tight development loop
 
+## External Resources
+[Pepper & Carrot Episode-1 Art by David Revoy](src/images/2016-12-04_Episode-1_by-David-Revoy.jpg) reproduced here under the [Creative Commons Attribution 4.0 International license](https://www.peppercarrot.com/en/license/index.html)

@@ -8,9 +8,7 @@ import Countdown from './countdown';
 
 function App() {
 	const halloween = useTimePoll(() => nextHalloween(DateTime.now()), 1000 * 60 * 60);
-	const now = useTimePoll(() => DateTime.now(), 500);
-	// const now = DateTime.local(2021, 10, 31, 12, 0, 0); // Day-of testing
-	// const now = DateTime.local(2021, 6, 20, 12, 0, 0); // Months ahead testing
+	const now = useTimePoll(() => DateTime.now(), 100);
 
 	return (
 		<>
@@ -20,6 +18,7 @@ function App() {
 				now={now}
 				title="Halloween"
 				/>
+			<a href="https://www.peppercarrot.com/" className="bg-source-link">Pepper & Carrot Episode-1 by David Revoy (CC BY 4.0)</a>
 		</>
 	);
 }

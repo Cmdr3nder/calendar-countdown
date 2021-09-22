@@ -28,6 +28,7 @@ core-build:
 	npx esbuild --bundle src/index.jsx --outfile=build/app.js
 	npx sass src/main.scss:build/style.css
 	cp src/index.html build/
+	cp -r src/images build/
 
 PHONY: build
 build: clean-build core-build

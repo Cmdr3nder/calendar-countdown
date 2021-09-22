@@ -27,7 +27,7 @@ function ClockSegment(props) {
 			<div className="value">
 				{paddedValue}
 			</div>
-			<div className="value">
+			<div className="label">
 				{pluralizedLabel}
 			</div>
 		</div>

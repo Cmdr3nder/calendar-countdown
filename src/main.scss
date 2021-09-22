@@ -16,36 +16,97 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+@import url('https://fonts.googleapis.com/css2?family=Are+You+Serious&family=Walter+Turncoat&display=swap');
+
+@mixin font-plain {
+	font-family: sans-serif;
+}
+
+@mixin font-blocky {
+	font-family: "Walter Turncoat", cursive;
+}
+
+@mixin font-pumpkin {
+	font-family: "Are You Serious", cursive;
+}
+
 html, body {
-	color: $base03;
-	background-color: $base2;
+	color: $base3;
+	background-color: $base03;
+	@include font-plain;
+	font-size: 5vw;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: $base03 url('/images/2016-12-04_Episode-1_by-David-Revoy.jpg') center center no-repeat;
+	background-size: cover;
 }
 
 h1 {
 	color: $violet;
+	@include font-pumpkin;
+	text-align: center;
 }
 
-body {
+#root {
 	display: flex;
 	justify-content: space-around;
 }
 
-#root {
-	background-color: $base3;
-	max-width: 800px;
-	height: 100%;
+.countdown {
+	background-color: $base02;
 	padding: 1rem;
+	opacity: 85%;
 }
 
-// The rest of the styles are implied @media (prefers-color-scheme: light)
-@media (prefers-color-scheme: dark) {
-	html, body {
-		color: $base3;
-		background-color: $base02;
-	}
+.clock {
+	display: flex;
+	justify-content: space-around;
 
-	#root {
-		background-color: $base03;
+	.clock-segment {
+		flex: 1 1 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.value {
+			@include font-blocky;
+			font-size: 1.5em;
+			padding: 0 0.1em;
+			text-align: center;
+			min-width: 2em;
+		}
+
+		.label {
+			@include font-blocky;
+			text-transform: uppercase;
+			font-size: 0.5em;
+			text-align: center;
+		}
 	}
 }
 
+.bg-source-link {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	text-align: right;
+	background-color: $base03;
+	font-size: 0.5em;
+	opacity: 85%;
+	color: $blue;
+
+	&:visited {
+		color: $magenta;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $violet;
+	}
+}
